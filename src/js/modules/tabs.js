@@ -12,7 +12,6 @@ const tabs = (parentSelector, tabsSelector, contentSelector, activeClass) => {
         tab.forEach(item => {
             item.classList.remove(activeClass)
         });
-
     }
 
     function showTabContent(i = 0) {
@@ -25,9 +24,10 @@ const tabs = (parentSelector, tabsSelector, contentSelector, activeClass) => {
 
     header.addEventListener("click", (e) => { 
         const target = e.target;
-        if (target && target.classList.contains(tabsSelector.slice(1))) {
-            tabs.forEach((element, i) => {
-                if (target == element) {
+        if (target && (target.parentNode.classList.contains(tabsSelector.slice(1)) || 
+        target.classList.contains(tabsSelector.slice(1)))) {
+            tab.forEach((element, i) => {
+                if (target == element || target.parentNode == element) {
                     hideTabContent();
                     showTabContent(i);
                 }
