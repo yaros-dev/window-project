@@ -18,6 +18,39 @@ body {
   color: red;
 }
 
+.faded { 
+
+  animation-name: faded;
+  animation-duration: 1s;
+}
+
+@keyframes faded {
+  0% {
+    opacity: 0.1;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.fadeInDown{
+  
+  animation-name: fadeInDown;
+  animation-duration: 1s;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0)
+  }
+
+  to {
+    opacity: 1;
+    transform: none
+  }
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -931,6 +964,8 @@ textarea:focus {
   display: none;
   margin-bottom: 3rem;
   width: 30rem;
+  min-height: 270px;
+  margin-top: 30px;
 }
 
 .popup_calc_content #type1 {

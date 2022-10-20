@@ -1,5 +1,5 @@
 const tabs = (parentSelector, tabsSelector, contentSelector, activeClass, display = 'block') => {
-    const header = document.querySelector(parentSelector),
+    const parentTab = document.querySelector(parentSelector),
         tab = document.querySelectorAll(tabsSelector),
         content = document.querySelectorAll(contentSelector);
 
@@ -22,7 +22,7 @@ const tabs = (parentSelector, tabsSelector, contentSelector, activeClass, displa
     hideTabContent();
     showTabContent();
 
-    header.addEventListener("click", (e) => { 
+    parentTab.addEventListener("click", (e) => {
         const target = e.target;
         if (target && (target.parentNode.classList.contains(tabsSelector.slice(1)) || 
         target.classList.contains(tabsSelector.slice(1)))) {
